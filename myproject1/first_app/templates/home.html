@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <ul>
+        <li>First name:{{fname}}</li>
+        <li>last name:{{lname}}</li>
+        <li>age:{{age}}</li>
+        {% if age > 18 %}
+        <li>You are older</li>
+        {% elif age < 18 %}
+        <li>You are child</li>
+        {% endif %}
+    </ul>
+    <ol>
+    {% for item in info %}
+        <li>{{ item.name }} {{ item.study }} {{ item.age }}</li>
+    {% endfor %}
+    </ol>
+</body>
+</html>
