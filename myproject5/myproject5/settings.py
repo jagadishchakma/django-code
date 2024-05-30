@@ -55,7 +55,7 @@ ROOT_URLCONF = 'myproject5.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,10 +117,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / STATIC_URL,
-]
-print(STATICFILES_DIRS)
+# STATICFILES_DIRS = [
+#     BASE_DIR / STATIC_URL,
+# ]
+# print(STATICFILES_DIRS)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

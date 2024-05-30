@@ -1,18 +1,41 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Page</title>
 </head>
+
 <body>
     <h1>Conact Page</h1>
     <ul>
-        <li><a href="/myapp/home/">Home</a></li>
-        <li><a href="/myapp/about/">About</a></li>
-        <li><a href="/myapp/contact/">Contact</a></li>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'about' id=4%}">About</a></li>
+        <li><a href="{% url 'contact'%}">Contact</a></li>
     </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data %}
+            <tr>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
+
 </html>
